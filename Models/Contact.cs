@@ -7,13 +7,13 @@ namespace Project.Models
   public class Contact
   {
     private static List<Contact> _instances = new List<Contact> {};
-    
+
     private string _name;
     private string _address;
-    private int _number;
+    private string _number;
     private int _id;
 
-    public Contact(string name, string address, int number)
+    public Contact(string name, string address, string number)
     {
       _name = name;
       _address = address;
@@ -42,12 +42,12 @@ namespace Project.Models
       _name = newAddress;
     }
 
-    public int GetNumber()
+    public string GetNumber()
     {
       return _number;
     }
 
-    public void SetNumber(int newNumber)
+    public void SetNumber(string newNumber)
     {
       _number = newNumber;
     }

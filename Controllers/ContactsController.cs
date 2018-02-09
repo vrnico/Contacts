@@ -34,7 +34,7 @@ namespace Project.Controllers
             Contact newContact = new Contact(
             Request.Form["new-name"],
             Request.Form["new-address"],
-            Convert.ToInt32(Request.Form["new-number"])
+            Request.Form["new-number"]
             );
             newContact.Save();
             List<Contact> allContacts = Contact.GetAll();
