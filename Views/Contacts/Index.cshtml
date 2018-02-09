@@ -7,9 +7,9 @@
   <body>
     <h1>my contacts:</h1>
     <ul>
-      @foreach (var item in Model)
+      @foreach (var contact in Model)
       {
-        <li><a href='/contacts/@item.GetId()'>@item.GetName()</a></li>
+        <li><a href='/contacts/@contact.GetId()'>@contact.GetName()</a></li>
       }
     </ul>
     <a href ='/contacts/new'>Add new contact</a>
