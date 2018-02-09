@@ -10,7 +10,7 @@
   <body>
     <div class="well">
     <h1>my contacts:</h1>
-    <ul>
+    <ul class="unstyled">
       @foreach (var contact in Model)
       {
         <li><h3><a href='/contacts/@contact.GetId()'>@contact.GetName()</a></h3></li>
