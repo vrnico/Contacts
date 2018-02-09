@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Contact Details</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   </head>
   <body>
-    <h1>@Model.GetName()</h1>
-    <h3>@Model.GetAddress()</h3>
-    <h3>@Model.GetNumber()</h3>
-
-    <a href='/contacts/new'> Add another contact</a>
-    <a href='/'>View all contacts</a>
+    <div class="well well-lg">
+    <kbd>name:</kbd> <h3> @Model.GetName()</h3>
+    <kbd>address:</kbd> <h3><a href="http://maps.google.com/maps?q=@Model.GetAddress()" target="_blank">@Model.GetAddress()</a></h3>
+    <kbd>number:</kbd> <h3><a href="tel:@Model.GetNumber()">@Model.GetNumber()</a></h3>
+    <a href='/contacts/new'class="btn btn-default btn-lg btn-success"> Add another contact</a>
+    <a href='/' class="btn btn-default btn-lg">View all contacts</a>
+  </div>
   </body>
 </html>

@@ -13,6 +13,8 @@ An MVC Web App used to store contact information (name, address, and phone numbe
 
 ## Setup/Installation Requirement
 
+The user must have Visual Studio and Csharp on their machine in order to set up this program's environment. 
+
 * git clone https://github.com/vrnico/Contacts.git
 * _dotnet restore_
 * _dotnet run_ to initiate hosting environment

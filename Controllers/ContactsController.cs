@@ -36,6 +36,7 @@ namespace Project.Controllers
             Request.Form["new-address"],
             Convert.ToInt32(Request.Form["new-number"])
             );
+            newContact.Save();
             List<Contact> allContacts = Contact.GetAll();
             return View("Index", allContacts);
         }

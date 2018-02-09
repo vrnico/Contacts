@@ -3,18 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Contact App</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   </head>
   <body>
+    <div class="well">
     <h1>my contacts:</h1>
     <ul>
       @foreach (var contact in Model)
       {
-        <li><a href='/contacts/@contact.GetId()'>@contact.GetName()</a></li>
+        <li><h3><a href='/contacts/@contact.GetId()'>@contact.GetName()</a></h3></li>
       }
     </ul>
-    <a href ='/contacts/new'>Add new contact</a>
+    <a href ='/contacts/new' class="btn btn-default btn-lg">Add new contact</a>
+    <br>
+    <br>
     <form action="/contacts/clear" method="post">
-      <button type="submit" name="clear">Clear List</button>
+      <button type="submit" name="clear" class="btn btn-danger">Clear List</button>
     </form>
+  </div>
+</div>
   </body>
 </html>

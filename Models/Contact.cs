@@ -6,11 +6,12 @@ namespace Project.Models
 {
   public class Contact
   {
+    private static List<Contact> _instances = new List<Contact> {};
+    
     private string _name;
     private string _address;
     private int _number;
     private int _id;
-    private static List<Contact> _instances = new List<Contact> {};
 
     public Contact(string name, string address, int number)
     {
@@ -55,6 +56,19 @@ namespace Project.Models
     {
       return _id;
     }
+
+    public void Save()
+    {
+      if (_name.Length == 0 || _address.Length == 0)
+        return;
+
+      foreach (var contact in _instances)
+        if (_name == contact._name && _address == contact._address && _number == contact._number)
+      return;
+
+      _instances.Add(this);
+    }
+
     public static List<Contact> GetAll()
     {
       return _instances;

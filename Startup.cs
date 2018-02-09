@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,11 +25,13 @@ namespace Project
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Items}/{action=Index}/{id?}");
+                    template: "{controller=Contacts}/{action=Index}/{id?}");
             });
             app.Run(async (context) =>
             {

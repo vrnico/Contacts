@@ -3,18 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Add Contact</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
   </head>
   <body>
+    <div class="well">
     <h1>Add Contact</h1>
-    <h3><i>please fill out the form below</i></h3>
+    <h4><i>please fill out the form below</i></h4>
     <form action='/' method='post'>
-        <label for='new-name'>Name:</label>
-        <input id='new-name' name='new-name' type='text'>
-        <label for='new-address'>Address:</label>
-        <input id='new-address' name='new-address' type='text'>
-        <label for='new-number'>Telephone:</label>
-        <input id='new-number' name='new-number' type='number'>
+        <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-group-item-info"><label for='new-name'>Name:</label>
+        <input id='new-name' name='new-name' type='text'></li>
+        <li class="list-group-item list-group-item-action list-group-item-info"><label for='new-address'>Address:</label>
+        <input id='new-address' name='new-address' type='text'></li>
+        <li class="list-group-item list-group-item-action list-group-item-info"><label for='new-number'>Telephone:</label>
+        <input id='new-number' name='new-number' type='number'></li>
+      </ul>
         <button type='submit'>Add</button>
     </form>
+  </div>
   </body>
 </html>

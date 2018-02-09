@@ -1,0 +1,8 @@
+html {
+  background: url('http://www.rff.org/files/terms/backgrounds/Forests.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+}
