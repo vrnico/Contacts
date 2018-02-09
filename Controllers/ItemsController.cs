@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Project.Controllers
 {
@@ -14,21 +15,32 @@ namespace Project.Controllers
             return View(allItems);
         }
 
-        [HttpGet("/items/new")]
+        [HttpGet("/contacts/new")]
         public ActionResult CreateForm()
         {
+            return View();
+        }
+
+        [HttpPost("/contacts/clear")]
+        public ActionResult Clear()
+        {
+            Item.Clear();
             return View();
         }
 
         [HttpPost("/")]
         public ActionResult Create()
         {
-            Item newItem = new Item(Request.Form["new-name"]);
+            Item newItem = new Item(
+            Request.Form["new-name"],
+            Request.Form["new-address"],
+            Convert.ToInt32(Request.Form["new-number"])
+            );
             List<Item> allItems = Item.GetAll();
             return View("Index", allItems);
         }
 
-        [HttpGet("/items/{id}")]
+        [HttpGet("/contacts/{id}")]
         public ActionResult Details(int id)
         {
             Item item = Item.Find(id);

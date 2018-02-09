@@ -9,9 +9,12 @@
     <ul>
       @foreach (var item in Model)
       {
-        <li><a href='/items/@item.GetId()'>@item.GetName()</a></li>
+        <li><a href='/contacts/@item.GetId()'>@item.GetName()</a></li>
       }
     </ul>
-    <a href ='/items/new'>Add new contact</a>
+    <a href ='/contacts/new'>Add new contact</a>
+    <form action="/contacts/clear" method="post">
+      <button type="submit" name="clear">Clear List</button>
+    </form>
   </body>
 </html>

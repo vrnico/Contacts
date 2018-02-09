@@ -7,12 +7,16 @@ namespace Project.Models
   public class Item
   {
     private string _name;
+    private string _address;
+    private int _number;
     private int _id;
     private static List<Item> _instances = new List<Item> {};
 
-    public Item(string name)
+    public Item(string name, string address, int number)
     {
       _name = name;
+      _address = address;
+      _number = number;
       _instances.Add(this);
       _id = _instances.Count;
     }
@@ -26,6 +30,27 @@ namespace Project.Models
     {
       _name = newName;
     }
+
+    public string GetAddress()
+    {
+      return _address;
+    }
+
+    public void SetAddress(string newAddress)
+    {
+      _name = newAddress;
+    }
+
+    public int GetNumber()
+    {
+      return _number;
+    }
+
+    public void SetNumber(int newNumber)
+    {
+      _number = newNumber;
+    }
+
     public int GetId()
     {
       return _id;
@@ -34,7 +59,7 @@ namespace Project.Models
     {
       return _instances;
     }
-    public static void ClearAll()
+    public static void Clear()
     {
       _instances.Clear();
     }
