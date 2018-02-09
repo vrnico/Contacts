@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact App</title>
+  </head>
+  <body>
+    <h1>my contacts:</h1>
+    <ul>
+      @foreach (var item in Model)
+      {
+        <li><a href='/items/@item.GetId()'>@item.GetName()</a></li>
+      }
+    </ul>
+    <a href ='/items/new'>Add new contact</a>
+  </body>
+</html>
