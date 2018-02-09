@@ -4,15 +4,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Project.Models
 {
-  public class Item
+  public class Contact
   {
     private string _name;
     private string _address;
     private int _number;
     private int _id;
-    private static List<Item> _instances = new List<Item> {};
+    private static List<Contact> _instances = new List<Contact> {};
 
-    public Item(string name, string address, int number)
+    public Contact(string name, string address, int number)
     {
       _name = name;
       _address = address;
@@ -55,7 +55,7 @@ namespace Project.Models
     {
       return _id;
     }
-    public static List<Item> GetAll()
+    public static List<Contact> GetAll()
     {
       return _instances;
     }
@@ -63,7 +63,7 @@ namespace Project.Models
     {
       _instances.Clear();
     }
-    public static Item Find(int searchId)
+    public static Contact Find(int searchId)
     {
       return _instances[searchId-1];
     }

@@ -5,14 +5,14 @@ using System;
 
 namespace Project.Controllers
 {
-    public class ItemsController : Controller
+    public class ContactsController : Controller
     {
 
         [HttpGet("/")]
         public ActionResult Index()
         {
-            List<Item> allItems = Item.GetAll();
-            return View(allItems);
+            List<Contact> allContacts = Contact.GetAll();
+            return View(allContacts);
         }
 
         [HttpGet("/contacts/new")]
@@ -24,27 +24,27 @@ namespace Project.Controllers
         [HttpPost("/contacts/clear")]
         public ActionResult Clear()
         {
-            Item.Clear();
+            Contact.Clear();
             return View();
         }
 
         [HttpPost("/")]
         public ActionResult Create()
         {
-            Item newItem = new Item(
+            Contact newContact = new Contact(
             Request.Form["new-name"],
             Request.Form["new-address"],
             Convert.ToInt32(Request.Form["new-number"])
             );
-            List<Item> allItems = Item.GetAll();
-            return View("Index", allItems);
+            List<Contact> allContacts = Contact.GetAll();
+            return View("Index", allContacts);
         }
 
         [HttpGet("/contacts/{id}")]
         public ActionResult Details(int id)
         {
-            Item item = Item.Find(id);
-            return View(item);
+            Contact contact = Contact.Find(id);
+            return View(contact);
         }
     }
 }
